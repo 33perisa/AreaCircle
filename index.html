@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Izračunavanje Površine Kruga</title>
+</head>
+<body>
+    <h1 style="color: green;">Izračunavanje Površine Kruga</h1>
+    <label for="radius">Unesite poluprečnik kruga:</label>
+    <input type="number" id="radius">
+    <button onclick="calculateArea()">Izračunaj</button>
+    <p id="result" style="color: green;"></p>
+
+    <script>
+        function calculateArea() {
+            // Uzimanje vrednosti poluprečnika iz input polja
+            var radius = document.getElementById("radius").value;
+
+            // Provera da li je uneta vrednost broj
+            if (isNaN(radius)) {
+                document.getElementById("result").innerText = "Molimo unesite broj.";
+                return;
+            }
+
+            // Računanje površine kruga
+            var area = Math.PI * radius * radius;
+
+            // Ispisivanje rezultata na stranici
+            document.getElementById("result").innerText = "Površina kruga je: " + area.toFixed(2);
+        }
+    </script>
+</body>
+</html>
